@@ -1,0 +1,28 @@
+// stripe units from value
+@function strip-units($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+// modified from https://gist.github.com/Jakobud/7414f91142e0f540f221a3e3cafdf856
+// fluid typography helper function
+@function lerp($map) {
+  $keys: map-keys($map);
+
+  @if (length($keys) != 2) {
+    @error "lerp() $map must be exactly 2 values";
+  }
+  // The slope
+  $m: (strip-units(map-get($map, nth($keys, 2))) - strip-units(map-get($map, nth($keys, 1)))) / (strip-units(nth($keys, 2)) - strip-units(nth($keys,1)));
+  
+  // The y-intercept
+  $b: strip-units(map-get($map, nth($keys, 1))) - $m * strip-units(nth($keys, 1));
+  
+  // Determine if the sign should be positive or negative
+  $sign: "+";
+  @if ($b < 0) {
+    $sign: "-";
+    $b: abs($b);
+  }
+  
+  @return calc(#{$m * 10}vw #{$sign} #{$b}rem);
+}

@@ -1,0 +1,51 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1;
+    color: #4c4d4f;
+    background-attachment: fixed;
+    background-image: url('../images/background.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0;
+    padding: 0;
+
+    @media screen and (orientation: portrait){
+        background-size: cover;
+    }
+
+    @media screen and (min-width: 480px) {
+        font-size: lerp((4.8rem: 1.6rem, 19.2rem: 2.0rem));
+    }
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    width: 100%;
+}

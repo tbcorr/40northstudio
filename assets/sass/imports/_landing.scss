@@ -1,0 +1,60 @@
+body.landing {
+
+    @media screen and (min-width: 768px){
+
+        main {
+            width: 50%;
+        }
+    }
+
+    .entry-header {
+
+        h1 {
+            font-size: 4.0rem;
+            line-height: 0.833;
+            text-transform: uppercase;
+            margin: 0 0 0.75em 0;
+
+            @media screen and (min-width: 480px) {
+                font-size: lerp((4.8rem: 4.0rem, 19.2rem: 12rem));
+            }
+
+            span:first-child {
+                font-weight: 800;
+                color: #328d43;
+            }
+
+            span:last-child {
+                font-weight: 500;
+                color: #4c4d4f;
+            }
+        }
+    }
+
+    .entry-content {
+
+        ul {
+            
+            li {
+                display: inline-block;
+                text-transform: lowercase;
+                vertical-align: middle;
+                margin: 0 1.5em 0 0;
+
+                &:after {
+                    content: "|";
+                    display: inline-block;
+                    margin: 0 0 0 1.5em;
+                }
+
+                &:last-child {
+                    color: #328d43;
+
+                    &:after {
+                        content: "";
+                    }
+                }
+            }
+        }
+    }
+}

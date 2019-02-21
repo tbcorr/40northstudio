@@ -1,0 +1,17 @@
+header.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 0 1 auto;
+
+    .logo {
+        width: 100%;
+        max-width: 6em;
+        display: block;
+        flex: 1 1 auto;
+
+        svg {
+            display: block;
+        }
+    }
+}
